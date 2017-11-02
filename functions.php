@@ -20,15 +20,15 @@ define( 'DWWP_TEMPLATE_URL', get_template_directory_uri() );
 define( 'DWWP_PATH',         get_template_directory() . '/' );
 define( 'DWWP_INC',          DWWP_PATH . 'includes/' );
 
-require('vendor/autoload.php');
+if ( file_exists( DWWP_PATH . 'vendor/autoload.php' ) ) {
+	require('vendor/autoload.php');
 
-// Include compartmentalized functions
-require_once DWWP_INC . 'core.php';
+	\AaronHolbrook\Autoload\autoload( DWWP_INC );
 
-// View Files
+	// Run the setup functions
+	DevelopWP\Theme\Core\setup();
 
-// Include lib classes
+}
 
-// Run the setup functions
-DevelopWP\Theme\Core\setup();
+
 
