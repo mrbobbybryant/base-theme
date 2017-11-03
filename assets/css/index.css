@@ -5,3 +5,7 @@
 
 /* Theme Templates */
 
+body {
+    background-color: red;
+    color: blue;
+}
